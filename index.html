@@ -7,13 +7,13 @@
   <meta name="description" content="Portfolio of Wilbert Giovanni Archie — Cyber Security student at BINUS University. Security analysis, threat modeling, and application security.">
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #f7f8fa;
-      --border: #e3e6ea;
-      --text: #1f2328;
-      --muted: #656d76;
-      --accent: #2f5bea;
-      --note: #9a6700;
+      --bg: #0f1b2d;
+      --surface: #16263d;
+      --border: #2a3b54;
+      --text: #e8eef6;
+      --muted: #94a3b8;
+      --accent: #4d8dff;
+      --note: #e3b341;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -29,7 +29,7 @@
 
     nav {
       position: sticky; top: 0;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(15, 27, 45, 0.92);
       backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--border);
       z-index: 10;
@@ -51,7 +51,7 @@
       display: inline-block; padding: 10px 20px; border-radius: 8px;
       border: 1px solid var(--border); font-weight: 600; color: var(--text);
     }
-    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: #0f1b2d; border-color: var(--accent); }
     .btn:hover { text-decoration: none; }
     .btn.primary:hover { opacity: 0.92; }
     .btn:not(.primary):hover { border-color: var(--muted); }
@@ -106,7 +106,7 @@
   <header>
     <div class="container">
       <h1>Wilbert Giovanni Archie</h1>
-      <p class="tagline">Cyber Security student at BINUS University (5th semester). I focus on application security — threat modeling, finding and documenting vulnerabilities, and analyzing how systems fail. <span class="note">[Sesuaikan kalimat ini dengan role yang Anda tuju.]</span></p>
+      <p class="tagline">Cyber Security student at BINUS University (GPA 3.84/4.00). I work on application security — secure coding in PHP, finding and documenting vulnerabilities, and threat modeling. Seeking a cyber security internship to work on real-world systems.</p>
       <div class="buttons">
         <a class="btn primary" href="#projects">View Work</a>
         <a class="btn" href="cv.pdf">Download CV</a>
@@ -118,7 +118,7 @@
     <div class="container">
       <h2>About</h2>
       <p>I'm a Computer Science undergraduate specializing in cyber security. My coursework and projects center on finding, documenting, and reasoning about security weaknesses — static analysis of mobile apps, threat modeling with STRIDE and MITRE ATT&CK, and the legal side of security under Indonesian data-protection law.</p>
-      <p style="margin-top:12px;">I'm currently building hands-on experience through CTF practice and personal labs. <span class="note">[Tambahkan 1 kalimat: apa yang sedang Anda pelajari / jenis internship yang dicari.]</span></p>
+      <p style="margin-top:12px;">I'm currently building hands-on experience through CTF practice and personal labs.</p>
     </div>
   </section>
 
@@ -128,32 +128,13 @@
       <p class="section-intro">Security analysis work, framed by what I actually did. Team projects list my specific role.</p>
 
       <div class="project">
-        <h3>Mobile Application Security Assessment</h3>
-        <p class="role">Team of 5 — my role: [TULIS PERAN ANDA, mis. "SAST analysis & vulnerability documentation"]</p>
-        <p>Static analysis (SAST) of an Android APK using MobSF. Identified and documented two vulnerabilities: a hardcoded API key and cleartext traffic enabled, each with evidence and remediation guidance.</p>
-        <p><span class="label">Findings:</span> VUL-001 exposed API key · VUL-002 cleartext traffic</p>
-        <p><span class="label">Deliverables:</span> report, presentation, PoC screenshots</p>
-        <div class="tags">MobSF · SAST · Android · OWASP MASVS</div>
-        <p class="note">[Jika APK milik pihak lain: jangan sebut namanya & sensor API key di semua screenshot sebelum publikasi.]</p>
-        <div class="links"><a href="#">Report (PDF) →</a></div>
-      </div>
-
-      <div class="project">
-        <h3>Threat Model: Instagram</h3>
+        <h3>Secure Web Application</h3>
         <p class="role">Individual project</p>
-        <p>End-to-end threat model of a large social platform using STRIDE, the OWASP Top 10, and MITRE ATT&CK. Mapped assets, trust boundaries, and prioritized threats, with an APA-7 reference list.</p>
-        <p><span class="label">Focus:</span> account lifecycle, identity, web & cloud threat surfaces</p>
-        <div class="tags">STRIDE · OWASP Top 10 · MITRE ATT&CK · Threat Modeling</div>
-        <div class="links"><a href="#">Report (PDF) →</a></div>
-      </div>
-
-      <div class="project">
-        <h3>MyKost — Security Analysis of a Rental Platform</h3>
-        <p class="role">Team project (built with Claude Code) — my contribution: security analysis & PKM-KC proposal</p>
-        <p>A boarding-house rental platform (Node.js/Express, PostgreSQL, React, Midtrans) submitted as a PKM-KC 2026 proposal. My contribution was the security side: threat-modeling the app as a case study (STRIDE), and analyzing web/cloud risks including IDOR, SSRF, and file-upload vulnerabilities.</p>
-        <div class="tags">Threat Modeling · IDOR · SSRF · File Upload · PKM-KC</div>
-        <p class="note">[Framing jujur: tulis kontribusi analisis keamanan Anda, bukan "saya membangun aplikasinya".]</p>
-        <div class="links"><a href="#">Proposal →</a></div>
+        <p>Built registration, login, and file-upload features in native PHP with PDO and MySQL, with security controls applied by hand rather than relying on a framework.</p>
+        <p><span class="label">Controls:</span> prepared statements (SQL injection), output encoding (XSS), session-based ownership checks (IDOR), bcrypt password hashing, server-side file validation</p>
+        <div class="tags">PHP · MySQL · PDO · Secure Coding · OWASP Top 10</div>
+        <p class="note">[Pastikan ini kode Anda sendiri sebelum dipajang di depan. Tambahkan link repo jika ada.]</p>
+        <div class="links"><a href="#">Source →</a></div>
       </div>
 
       <div class="project">
@@ -178,7 +159,6 @@
             <span>Threat Modeling (STRIDE)</span>
             <span>MITRE ATT&CK</span>
             <span>OWASP Top 10</span>
-            <span>SAST (MobSF)</span>
             <span>Burp Suite</span>
           </div>
         </div>
@@ -186,15 +166,16 @@
           <h3>Languages & Data</h3>
           <div class="chips">
             <span>Python</span>
-            <span>SQL / MySQL</span>
             <span>PHP</span>
-            <span>[tambahkan yang Anda kuasai]</span>
+            <span>C</span>
+            <span>SQL / MySQL</span>
           </div>
         </div>
         <div class="group">
           <h3>Foundations</h3>
           <div class="chips">
-            <span>Linux</span>
+            <span>Kali Linux</span>
+            <span>Nmap</span>
             <span>Networking</span>
             <span>Indonesian cyber law (UU ITE, UU PDP)</span>
           </div>
@@ -206,7 +187,7 @@
   <section id="education">
     <div class="container">
       <h2>Education</h2>
-      <p><strong>BINUS University</strong> — Bachelor of Computer Science (Cyber Security), 2024–present</p>
+      <p><strong>BINUS University</strong> — Bachelor of Computer Science (S.Kom), Cyber Security, 2024–2028 (expected) · GPA 3.84/4.00</p>
       <p style="margin-top:8px;" class="label">Relevant coursework:</p>
       <p>Software Security · Secure Programming · Server &amp; Network Administration · Database Technology · Computer Forensics</p>
     </div>
@@ -217,9 +198,9 @@
       <h2>Contact</h2>
       <p>Open to cyber security internship opportunities.</p>
       <ul class="list" style="margin-top:12px;">
-        <li>Email — <a href="mailto:EMAIL@contoh.com">EMAIL@contoh.com</a> <span class="note">[ganti]</span></li>
+        <li>Email — <a href="mailto:wilbertarchiee@gmail.com">wilbertarchiee@gmail.com</a></li>
         <li>GitHub — <a href="https://github.com/wilborgg">github.com/wilborgg</a></li>
-        <li>LinkedIn — <a href="https://linkedin.com/in/USERNAME">linkedin.com/in/USERNAME</a> <span class="note">[ganti atau hapus]</span></li>
+        <li>LinkedIn — <a href="https://linkedin.com/in/wilbertarchie">linkedin.com/in/wilbertarchie</a></li>
       </ul>
     </div>
   </section>
