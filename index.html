@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wilbert Giovanni Archie | Cyber Security</title>
-  <meta name="description" content="Portfolio of Wilbert Giovanni Archie — Cyber Security student at BINUS University. Security analysis, threat modeling, and application security.">
+  <meta name="description" content="Portfolio of Wilbert Giovanni Archie — Cyber Security student at BINUS University seeking a SOC / Security Analyst internship. Secure coding and vulnerability analysis projects.">
   <style>
     :root {
       --bg: #0f1b2d;
@@ -13,7 +13,6 @@
       --text: #e8eef6;
       --muted: #94a3b8;
       --accent: #4d8dff;
-      --note: #e3b341;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -57,8 +56,20 @@
     .btn:not(.primary):hover { border-color: var(--muted); }
 
     section { padding: 48px 0; border-top: 1px solid var(--border); }
-    h2 { font-size: 1.45rem; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .section-intro { color: var(--muted); margin-bottom: 26px; max-width: 640px; }
+    h2 { font-size: 1.45rem; margin-bottom: 16px; letter-spacing: -0.01em; }
+    section > .container > p + p { margin-top: 12px; }
+
+    .project {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 24px; margin-bottom: 18px;
+    }
+    .project h3 { font-size: 1.15rem; margin-bottom: 4px; }
+    .project .role { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 14px; }
+    .project p { font-size: 0.97rem; margin-bottom: 8px; }
+    .project ul { padding-left: 20px; }
+    .project li { font-size: 0.97rem; margin-bottom: 4px; }
+    .project .tags { margin-top: 14px; font-size: 0.82rem; color: var(--muted); }
+    .project .links { margin-top: 10px; font-size: 0.9rem; }
 
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .skills .group h3 { font-size: 0.82rem; margin-bottom: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -68,25 +79,13 @@
       padding: 5px 13px; border-radius: 20px; font-size: 0.88rem;
     }
 
-    .project {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 24px; margin-bottom: 18px;
-    }
-    .project h3 { font-size: 1.15rem; margin-bottom: 4px; }
-    .project .role { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 14px; }
-    .project p { font-size: 0.97rem; margin-bottom: 8px; }
-    .project .label { color: var(--muted); font-weight: 600; }
-    .project .tags { margin-top: 14px; font-size: 0.82rem; color: var(--muted); }
-    .project .links { margin-top: 14px; display: flex; gap: 16px; font-size: 0.9rem; }
+    .label { color: var(--muted); font-weight: 600; }
 
     .list { list-style: none; }
     .list li { padding: 12px 0; border-bottom: 1px solid var(--border); }
     .list li:last-child { border-bottom: none; }
-    .list .meta { color: var(--muted); font-size: 0.9rem; }
 
     footer { padding: 32px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; text-align: center; }
-
-    .note { color: var(--note); font-size: 0.8rem; font-style: italic; }
   </style>
 </head>
 <body>
@@ -106,7 +105,7 @@
   <header>
     <div class="container">
       <h1>Wilbert Giovanni Archie</h1>
-      <p class="tagline">Cyber Security student at BINUS University (GPA 3.84/4.00). I work on application security — secure coding in PHP, finding and documenting vulnerabilities, and threat modeling. Seeking a cyber security internship to work on real-world systems.</p>
+      <p class="tagline">Third-year Cyber Security student at BINUS University (GPA 3.84/4.00), seeking a SOC / Security Analyst internship. My hands-on work so far covers secure PHP backend development and static analysis of Android apps.</p>
       <div class="buttons">
         <a class="btn primary" href="#projects">View Work</a>
         <a class="btn" href="cv.pdf">Download CV</a>
@@ -117,31 +116,48 @@
   <section id="about">
     <div class="container">
       <h2>About</h2>
-      <p>I'm a Cyber Security undergraduate at BINUS University with foundational skills in web security and secure coding from coursework and lab work. Familiar with Kali Linux, Nmap, Burp Suite, Python, PHP, and C. Seeking an internship in cyber security or a related IT field to gain hands-on experience with real-world systems.</p>
-      <p style="margin-top:12px;">I'm currently building hands-on experience through CTF practice.</p>
+      <p>I'm a Cyber Security undergraduate at BINUS University. My project work so far is in application security: I implemented SQL injection, XSS, and IDOR mitigations in a PHP backend, and performed static analysis of an Android app with MobSF as part of a team assessment.</p>
+      <!-- <p>I'm now focusing on defensive security: how endpoint logs reach a SIEM, how alerts are triaged, and how incidents are reported.</p> -->
+      <!-- <p>Currently building a Wazuh SIEM home lab with a Windows Server endpoint and Sysmon to practice log analysis and alert triage.</p> -->
+      <p>I also practice on CTF challenges.</p>
     </div>
   </section>
 
   <section id="projects">
     <div class="container">
       <h2>Projects</h2>
-      <!-- <p class="section-intro">Security analysis work, framed by what I actually did.</p> -->
 
       <div class="project">
-        <h3>Secure Web Application</h3>
-        <p class="role">Individual project</p>
-        <p>Built registration, login, and file-upload features in native PHP with PDO and MySQL, with security controls applied by hand rather than relying on a framework.</p>
-        <p><span class="label">Controls:</span> prepared statements (SQL injection), output encoding (XSS), session-based ownership checks (IDOR), bcrypt password hashing, server-side file validation</p>
+        <h3>Secure File Storage Web App</h3>
+        <p class="role">Course project · 2026</p>
+        <p>Backend for a file storage web app with login, file upload, and per-user file listing. The UI was provided as a course template; I implemented the backend logic.</p>
+        <ul>
+          <li>Prevented SQL injection with PDO prepared statements for all queries.</li>
+          <li>Prevented XSS with output encoding and IDOR by taking user IDs from the server-side session.</li>
+          <li>Hashed passwords with bcrypt and regenerated session IDs on login to prevent session fixation.</li>
+          <li>Secured file uploads with an extension allowlist, a 5 MB size limit, and random 128-bit filenames.</li>
+        </ul>
         <div class="tags">PHP · MySQL · PDO · Secure Coding</div>
-        <!-- <div class="links"><a href="#">Source →</a></div> -->
+        <div class="links"><a href="https://github.com/wilborgg/secure-file-storage-php">Source code on GitHub →</a></div>
+      </div>
+
+      <div class="project">
+        <h3>Mobile Application Security Assessment</h3>
+        <p class="role">Team project (4 members) · 2025</p>
+        <p>My part: static analysis of the app and co-authoring the vulnerability report.</p>
+        <ul>
+          <li>Performed static analysis (SAST) of an Android APK using MobSF.</li>
+          <li>Identified 2 vulnerabilities: an exposed API key and enabled cleartext HTTP traffic.</li>
+          <li>Co-authored the team's vulnerability report, documenting findings with proof-of-concept screenshots.</li>
+        </ul>
+        <div class="tags">MobSF · Android · SAST</div>
       </div>
 
       <div class="project">
         <h3>Klinik Sehat — Normalized Database Design</h3>
-        <p class="role">Individual project</p>
-        <p>Designed a clinic database normalized to 3NF: full MySQL schema, ERD, and documentation. Supporting work demonstrating data modeling fundamentals.</p>
+        <p class="role">Course project · Database Technology</p>
+        <p>Designed a clinic database normalized to 3NF, with a full MySQL schema, ERD, and documentation.</p>
         <div class="tags">MySQL · 3NF · ERD · Data Modeling</div>
-        <!-- <div class="links"><a href="#">Report →</a></div> -->
       </div>
 
     </div>
@@ -154,24 +170,28 @@
         <div class="group">
           <h3>Security</h3>
           <div class="chips">
+            <span>OWASP Top 10</span>
+            <span>SAST</span>
             <span>Burp Suite</span>
             <span>Nmap</span>
+            <span>MobSF</span>
           </div>
         </div>
         <div class="group">
-          <h3>Languages & Data</h3>
+          <h3>Languages &amp; Data</h3>
           <div class="chips">
             <span>Python</span>
             <span>PHP</span>
             <span>C</span>
             <span>SQL / MySQL</span>
+            <span>HTML</span>
           </div>
         </div>
         <div class="group">
-          <h3>Foundations</h3>
+          <h3>Tools</h3>
           <div class="chips">
             <span>Kali Linux</span>
-            <span>Networking</span>
+            <span>Git</span>
           </div>
         </div>
       </div>
@@ -182,15 +202,15 @@
     <div class="container">
       <h2>Education</h2>
       <p><strong>BINUS University</strong> — Bachelor of Computer Science (S.Kom), Cyber Security, 2024–2028 (expected) · GPA 3.84/4.00</p>
-      <p style="margin-top:8px;" class="label">Relevant coursework:</p>
-      <p>Software Security · Secure Programming · Server &amp; Network Administration · Database Technology · Computer Forensics</p>
+      <p class="label">Relevant coursework:</p>
+      <p>Software Security · Secure Programming · Database Technology · Computer Forensics</p>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
-      <p>Open to cyber security internship opportunities.</p>
+      <p>Open to SOC / Security Analyst internship opportunities.</p>
       <ul class="list" style="margin-top:12px;">
         <li>Email — <a href="mailto:wilbertarchiee@gmail.com">wilbertarchiee@gmail.com</a></li>
         <li>GitHub — <a href="https://github.com/wilborgg">github.com/wilborgg</a></li>
